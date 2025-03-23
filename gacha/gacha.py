@@ -1,29 +1,6 @@
 import random
 from datetime import datetime
 
-class User:
-    def __init__(self, uid, username, pity, four_star_pity, four_star_rate_on, is_rate_on):
-        self.uid = uid
-        self.username = username
-        self.primogems = 0
-        self.pity = pity
-        self.four_star_pity = four_star_pity
-        self.four_star_rate_on = four_star_rate_on
-        self.is_rate_on = is_rate_on
-
-class Item:
-    def __init__(self, name, rarity, item_type, type, image_url):
-        self.name = name
-        self.rarity = rarity
-        self.item_type = item_type
-        self.type = type
-        self.image_url = image_url
-
-class Character(Item):
-    def __init__(self, name, rarity, item_type, type, is_rate_up, image_url):
-        super().__init__(name, rarity, item_type, type, image_url)
-        self.is_rate_up = is_rate_up
-
 # Probabilitas sesuai rarity
 rarity_choices = ["3-star", "4-star", "5-star"]
 rarity_weights = {

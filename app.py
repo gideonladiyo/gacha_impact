@@ -40,7 +40,7 @@ def get_history():
     history = []
     _json = request.json
     uid = _json["uid"]
-    data = History.query.filter_by(uid=uid).all()
+    data = History.query.filter_by(uid=uid).order_by(History.date.desc()).limit(200).all()
     history = history_schema.dump(data)
     return jsonify(history)
 
@@ -134,8 +134,6 @@ def ten_pull():
     
     db.session.commit()
     return jsonify(result)
-
-# post
 
 # patch
 @app.route("/user/<string:uid>", methods=["PATCH"])
